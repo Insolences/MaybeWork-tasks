@@ -95,8 +95,8 @@
         // const arr2 = concatArray(arr1, 2, [3], [[4]]);
         //
         // function concatArray(arr, ...arg){
-        //     let newarr = arr.concat(...arg)
-        //     return newarr;
+        //     let newArr = arr.concat(...arg)
+        //     return newArr;
         // }
         //
         // console.log('arr2: ', arr2); // [1, 2, 3, [4]]
@@ -189,7 +189,7 @@
         //     let sortArr = [...arr].sort();
         //     console.log(sortArr)
         //     for (let i = 0; i < sortArr.length; i++) {
-        //         if (sortArr[i + 1] === sortArr[i]) {
+        //         if (sortArr[i] === sortArr[i+1]) {
         //             newArr.push(sortArr[i])
         //         }
         //     }
@@ -205,15 +205,12 @@
         // const arr = ['a', 'b', 'c', 'd'];
         //
         // function nfa(arr, index){
-        //     let res = arr[index]
-        //     if(index < 0){
-        //         res = arr.slice(index)
-        //     }
-        //     return res[0]
+        //     let res = ()=> index >= 0 ? arr[index]: arr.slice(index)[0]
+        //     return res()
         // }
         //
         // console.log(nfa(arr, 1)); // 'b'
-        // console.log(nfa(arr, -3)); // 'c';
+        // console.log(nfa(arr, -2)); // 'c';
 
         //------------------------------------------------------------------------------------------------------
 
@@ -225,26 +222,22 @@
         // 13. Напишите функцию, которая вернет массив с группированными элементами исходных массивов.
         // Логика группировки: первая группа состоит из всех первых элементов исходных массивов, вторая группа - из вторых элементов и т.д.
         // function group(...arr){
-        //     console.log('arr: ',arr)
         //     let res = []
-        //     let newArr = []
-        //     let maxCount = 0
-        //
-        //     for(let i = 0; i< arr.length; i++){
-        //         let count = 0
-        //         for(let j = 0; j < arr[i].length; j++){
-        //             // console.log('Подмасив ' + arr[i] + ' под индексоим: '+ j + ' c значением: ' + arr[i][j])
-        //             newArr.push(arr[i][j])
-        //             count++
+        //     let count = 0;
+        //     let newArr = [];
+        //     fun()
+        //     function fun(){
+        //         for(let i = 0; i< arr.length; i++){
+        //             newArr.push(arr[i][count])
         //         }
-        //         if(maxCount < count){
-        //             maxCount = count
+        //         res.push(newArr)
+        //         count++
+        //         if(count < arr.length - 1){
+        //             newArr = []
+        //             fun()
         //         }
         //     }
-        //     res.push(newArr)
-        //     console.log('newArr: ', newArr)
-        //     console.log('res: ', res)
-        //     console.log('maxCount: ', maxCount)
+        //     return res
         // }
         //
         // console.log(group(['a', 'b'], [1, 2, 3], [true, false]));
@@ -293,11 +286,10 @@
         //-------------------------------------------------------------------------------------
 
         // 16. Напишите функцию, которая найдет високосные года в указанном диапазоне дат
-        //
         // function findYear(first, second){
         //     let res = []
         //     for (let i = first; i <= second; i++) {
-        //         if (((i % 4 === 0) && (i % 100 !== 0)) || (i % 400 === 0)) {
+        //         if (((i % 4 === 0))) {
         //             res.push(i)
         //         }
         //     }
@@ -305,7 +297,6 @@
         // }
         //
         // console.log(findYear(2000,2018)); // [2000,2004,2008,2012,2016]
-
         //-----------------------------------------------------------------------------------
 
         //17. Напишите функцию, которая перемешает массив в случайном порядке
@@ -342,7 +333,6 @@
         //
         // const arr = [3, 8, 7, 6, 5, -4, 3, 2, 1];
         //
-        //
         // function sort(arr){
         //     arr.sort((a,b)=>{
         //         if(a<b){
@@ -354,7 +344,9 @@
         //
         // console.log(sort(arr)); // [-4,1,2,3,3,5,6,7,8]
         //---------------------------------------------------------------------------
+
         //20. Напишите функцию, которая вернет самый частый элемент массива
+
         // const arr = [7, 'z', 'z', 'z', 3, 7, 'z', 7, 'z', 3, 5, 9, 7];
         //
         // function fn(arr) {

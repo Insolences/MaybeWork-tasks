@@ -96,24 +96,24 @@
         // 7. Функция геттер, которая спустится по вложенности данных на основе указанного строкой
         // ключа через точку (как дойдете до задачи, напишу пример)
         //
-        // let obj = {
-        //     users: ['Alex', 'Max', 'Ins'],
-        //     status: true,
-        //     teacher: {
-        //         name : 'Vika',
-        //         age: 23,
-        //         family: {
-        //             mother: {
-        //                 name: 'Sofia',
-        //                 age: 45
-        //             },
-        //             father: {
-        //                 name: 'Jhon',
-        //                 age: 24
-        //             }
-        //         }
-        //     }
-        // }
+        let obj = {
+            users: ['Alex', 'Max', 'Ins'],
+            status: true,
+            teacher: {
+                name : 'Vika',
+                age: 23,
+                family: {
+                    mother: {
+                        name: 'Sofia',
+                        age: 45
+                    },
+                    father: {
+                        name: 'Jhon',
+                        age: 24
+                    }
+                }
+            }
+        }
         //
         // function getValue(obj, keys ) {
         //     const arr = keys.split(".")
@@ -127,6 +127,19 @@
         //
         // console.log(getValue(obj, 'teacher.name'))
         // console.log(getValue(obj, 'teacher.family.mother.age'))
+
+        // Option 2
+        // function getValue(obj, keys) {
+        //     let res;
+        //     res = keys.split('.');
+        //     res = res.reduce(function(obj1, key1) {
+        //         return obj1 && obj1[key1];
+        //     }, obj)
+        //     return res
+        // }
+        //
+        // console.log(getValue(obj, 'teacher.name')) //Vika
+        // console.log(getValue(obj, 'teacher.family.mother.age')) // 45
 
         //8. Генерация случайного hex цвета
 
